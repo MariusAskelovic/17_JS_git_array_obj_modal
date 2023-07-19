@@ -8,6 +8,9 @@ const els = {
   cancelBnt: document.getElementById('cancel'),
   modalEl: document.getElementById('modal'),
   backdropEl: document.getElementById('backdrop'),
+  fieldsetEl: document.querySelector('fieldset'),
+  fieldsetInput: document.querySelector('input'),
+  fieldsetBtn: document.getElementById('fieldsetBtn'),
 };
 
 // event listeners
@@ -42,4 +45,8 @@ function displayInModal(title, subtitle) {
 
 els.showErrorBtn.addEventListener('click', () => {
   displayInModal('Klaida', 'visi laukai privalomi');
+});
+els.fieldsetBtn.addEventListener('click', () => {
+  els.modalEl.querySelector('h2').textContent = els.fieldsetInput.value;
+  showModal();
 });
