@@ -410,7 +410,7 @@ function avgMarksFilteredByFaculty(arrName, facultyName) {
       });
     }
   });
-  console.log('newArrAvgMarks ===', newArrAvgMarks);
+  // console.log('newArrAvgMarks ===', newArrAvgMarks);
 }
 // 7. Informatikos fakulteto studentų vidurkius
 avgMarksFilteredByFaculty(students, 'Informatikos fakultetas');
@@ -425,10 +425,43 @@ function filterStudentsByCourse(arrName, courseNo) {
   return newArr;
 }
 // 10. tik pirmo kurso studentus
-console.table(filterStudentsByCourse(students, 1));
-// 11. tik antro kurso studentus
-console.table(filterStudentsByCourse(students, 2));
-// 12. tik trečio kurso studentus
-console.table(filterStudentsByCourse(students, 3));
-// 13. tik ketvirto kurso studentus
-console.table(filterStudentsByCourse(students, 4));
+// console.table(filterStudentsByCourse(students, 1));
+// // 11. tik antro kurso studentus
+// console.table(filterStudentsByCourse(students, 2));
+// // 12. tik trečio kurso studentus
+// console.table(filterStudentsByCourse(students, 3));
+// // 13. tik ketvirto kurso studentus
+// console.table(filterStudentsByCourse(students, 4));
+
+function findStudentBySurname(pavarde) {
+  return students.filter((oneObj) => oneObj.surname === pavarde);
+}
+
+let checkSurnameStudent = findStudentBySurname('Katalizatorius');
+// console.table(checkSurnameStudent);
+
+// experiment
+function bendrasStudentoPazymiuVidurkis() {
+  const newArr = [...students];
+  newArr.forEach((vienasStudentas) => {
+    let studentoPazymiuVidurkis = 0;
+    let kiekDalyku = 0;
+    vienasStudentas.modules.map((dalykas) => {
+      let dalykoPazymiuVidurkis = 0;
+      dalykoPazymiuVidurkis =
+        dalykas.marks.reduce((total, num) => total + num, 0) /
+        dalykas.marks.length;
+      kiekDalyku += 1;
+      studentoPazymiuVidurkis += dalykoPazymiuVidurkis;
+      console.log(dalykas.title, ' ', dalykoPazymiuVidurkis);
+    });
+    studentoPazymiuVidurkis = studentoPazymiuVidurkis / kiekDalyku;
+    console.log(
+      ' <<<<< ',
+      vienasStudentas.name,
+      ' visu dalyku pazymiu vidurkis = ',
+      studentoPazymiuVidurkis
+    );
+  });
+}
+bendrasStudentoPazymiuVidurkis();
