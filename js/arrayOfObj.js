@@ -92,24 +92,16 @@ const driversGendersArr = people
 function changeIncomeToSalary() {
   // sukti cikla
   const salaryArr = people.map((pObj) => {
-    // A. ciklo metu grazinti nauja norima objekta
-    const naujasObj = {
-      name: pObj.name,
-      surname: pObj.surname,
-      sex: pObj.sex,
-      age: pObj.age,
-      salary: pObj.income,
-      married: pObj.married,
-      hasCar: pObj.hasCar,
-    };
-    return naujasObj;
+    const pObjCopy = { ...pObj }; // pasidarom masyvo kopija, nes map pakeicia originala
+    pObjCopy.salary = pObj.income;
+    delete pObjCopy.income;
+    return pObjCopy;
   });
-  console.table(salaryArr);
-  return salaryArr;
   // B. ciklo metu nusikopijuoti pObj
   // ir atlikti kopijai pakeitimus
   // grazinti kopija
-
+  console.table(salaryArr);
   // grazinti pakeista masyva
+  return salaryArr;
 }
 changeIncomeToSalary();
