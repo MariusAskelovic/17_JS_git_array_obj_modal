@@ -59,4 +59,22 @@ const people = [
     hasCar: false,
   },
 ];
+
+// 0
+// name: 'Jonas',
+// surname: 'Jonaitis',
+// sex: 'male',
+// age: 26,
+// income: 1200,
+// married: false,
+// hasCar: false,
+
 console.table(people);
+
+// 1. Naudojant Array.prototype.forEach atspausdinti visus vyrus.
+people.forEach((personObj) => {
+  //   console.log(personObj.sex);
+  if (personObj.sex === 'male') {
+    console.log(personObj);
+  }
+});
