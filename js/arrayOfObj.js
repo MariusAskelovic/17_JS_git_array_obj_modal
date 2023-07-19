@@ -145,6 +145,7 @@ const graza1 = changeIncomeToSalary();
 
 // =================== practise
 
+// STUDENTU MASYVAS
 const students = [
   {
     name: 'Panatėja',
@@ -347,6 +348,7 @@ const students = [
 ];
 // console.table(students);
 
+// 1. visų studentų vidurkius
 const avgMarks = [];
 students.forEach((studentObj) => {
   // console.log('studentObj ===', studentObj);
@@ -361,6 +363,7 @@ students.forEach((studentObj) => {
 // console.log(avgMarks);
 // console.table(students);
 
+// 2. visu studentu vardus ir pavardes kaip stringus masyve.
 const bothNamesStrArr = [];
 people.forEach((vienasStudentas) => {
   return bothNamesStrArr.push(
@@ -369,6 +372,7 @@ people.forEach((vienasStudentas) => {
 });
 // console.log(bothNamesStrArr);
 
+// 3. visu studentu fakultetus kaip stringus masyve.
 function facultyList(arrName) {
   const newArr = [];
   arrName.forEach((oneStudentObj) => newArr.push(oneStudentObj.faculty));
@@ -377,7 +381,18 @@ function facultyList(arrName) {
 let checkFacultyList = facultyList(students);
 // console.log('checkFacultyList ===', checkFacultyList);
 
+// 4. tik Informatikos fakulteto studentus
 const informatikaiArr = students.filter(
   (oneObj) => oneObj.faculty === 'Informatikos fakultetas'
 );
-console.table(informatikaiArr);
+// console.table(informatikaiArr);
+
+// 5. tik Chemijos fakulteto studentus
+function filterFacultiesByName(arrName, facultyName) {
+  const newArr = arrName.filter((oneObj) => oneObj.faculty === facultyName);
+  console.table(newArr);
+}
+filterFacultiesByName(students, 'Chemijos fakultetas');
+
+// 6. tik Elektros ir elektronikos fakulteto studentus
+filterFacultiesByName(students, 'Elektros ir elektronikos fakultetas');
