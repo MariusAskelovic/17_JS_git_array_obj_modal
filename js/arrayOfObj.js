@@ -71,13 +71,13 @@ const people = [
 
 console.table(people);
 
-function printMen() {
+function printMen(arr) {
   // 1. Naudojant Array.prototype.forEach atspausdinti visus vyrus.
-  people.forEach((personObj) => {
+  arr.forEach((personObj) => {
     //   console.log(personObj.sex);
     if (personObj.sex === 'male') {
       console.log(personObj);
     }
   });
 }
-printMen();
+printMen(people);
