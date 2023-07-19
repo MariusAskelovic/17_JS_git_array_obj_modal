@@ -1,5 +1,6 @@
 import { printMen } from './modules/forEachFn.js';
 import { youngWomen } from './modules/filterFn.js';
+import { printDriverGender } from './modules/forEachFn.js';
 console.log('arrayOfObj.js file was loaded');
 
 const people = [
@@ -74,5 +75,6 @@ console.table(people);
 
 // printMen(people);
 
-const moterys = youngWomen(people);
-console.log('moterys ===', moterys.length);
+// const moterys = youngWomen(people);
+// console.log('moterys ===', moterys.length);
+// printDriverGender(people);

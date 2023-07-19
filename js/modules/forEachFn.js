@@ -7,3 +7,12 @@ export function printMen(arr) {
     }
   });
 }
+
+export function printDriverGender(arr) {
+  arr.forEach((personObj) => {
+    if (personObj.hasCar === true) {
+      console.log(personObj.name, 'vairuoja', personObj.sex);
+      return personObj.sex;
+    }
+  });
+}
