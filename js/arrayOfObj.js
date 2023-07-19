@@ -346,7 +346,7 @@ const students = [
     ],
   },
 ];
-// console.table(students);
+console.table(students);
 
 // 1. visų studentų vidurkius
 const avgMarks = [];
@@ -392,7 +392,30 @@ function filterFacultiesByName(arrName, facultyName) {
   const newArr = arrName.filter((oneObj) => oneObj.faculty === facultyName);
   console.table(newArr);
 }
-filterFacultiesByName(students, 'Chemijos fakultetas');
+// filterFacultiesByName(students, 'Chemijos fakultetas');
 
 // 6. tik Elektros ir elektronikos fakulteto studentus
-filterFacultiesByName(students, 'Elektros ir elektronikos fakultetas');
+// filterFacultiesByName(students, 'Elektros ir elektronikos fakultetas');
+
+// FUNKCIJA 7, 8, 9 uzduotims
+function avgMarksFilteredByFaculty(arrName, facultyName) {
+  const newArrAvgMarks = [];
+  arrName.filter((oneStudent) => {
+    if (oneStudent.faculty === facultyName) {
+      oneStudent.modules.forEach((modulesObj) => {
+        newArrAvgMarks.push(
+          modulesObj.marks.reduce((total, num) => total + num, 0) /
+            modulesObj.marks.length
+        );
+      });
+    }
+  });
+  console.log('newArrAvgMarks ===', newArrAvgMarks);
+}
+
+// 7. Informatikos fakulteto studentų vidurkius
+avgMarksFilteredByFaculty(students, 'Informatikos fakultetas');
+// 8. Chemijos fakulteto studentų vidurkius
+avgMarksFilteredByFaculty(students, 'Chemijos fakultetas');
+// 9. Elektros ir elektronikos fakulteto studentų vidurkius
+avgMarksFilteredByFaculty(students, 'Elektros ir elektronikos fakultetas');
