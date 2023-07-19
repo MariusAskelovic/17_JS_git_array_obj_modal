@@ -1,4 +1,5 @@
 import { printMen } from './modules/forEachFn.js';
+import { youngWomen } from './modules/filterFn.js';
 console.log('arrayOfObj.js file was loaded');
 
 const people = [
@@ -73,16 +74,5 @@ console.table(people);
 
 // printMen(people);
 
-// 2. Naudojant Array.prototype.filter grazinti visas moteris jaunesnes nei 35 metai.
-function youngWomen(arr) {
-  //   const atrinktiObj = people
-  //     .filter((personObj) => personObj.sex === 'female')
-  //     .filter((personObj) => personObj.age < 35);
-  const atrinktiObj = arr.filter(
-    (personObj) => personObj.sex === 'female' && personObj.age < 35
-  );
-  console.table(atrinktiObj);
-  return atrinktiObj;
-}
 const moterys = youngWomen(people);
 console.log('moterys ===', moterys.length);
