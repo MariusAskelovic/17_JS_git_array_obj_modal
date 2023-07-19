@@ -358,7 +358,7 @@ students.forEach((studentObj) => {
     );
   });
 });
-console.log(avgMarks);
+// console.log(avgMarks);
 // console.table(students);
 
 const bothNamesStrArr = [];
@@ -367,5 +367,12 @@ people.forEach((vienasStudentas) => {
     vienasStudentas.name + ' ' + vienasStudentas.surname
   );
 });
+// console.log(bothNamesStrArr);
 
-console.log(bothNamesStrArr);
+function facultyList(arrName) {
+  const newArr = [];
+  arrName.forEach((oneStudentObj) => newArr.push(oneStudentObj.faculty));
+  return newArr;
+}
+let checkFacultyList = facultyList(students);
+console.log('checkFacultyList ===', checkFacultyList);
