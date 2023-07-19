@@ -359,3 +359,13 @@ students.forEach((studentObj) => {
   });
 });
 console.log(avgMarks);
+// console.table(students);
+
+const bothNamesStrArr = [];
+people.forEach((vienasStudentas) => {
+  return bothNamesStrArr.push(
+    vienasStudentas.name + ' ' + vienasStudentas.surname
+  );
+});
+
+console.log(bothNamesStrArr);
