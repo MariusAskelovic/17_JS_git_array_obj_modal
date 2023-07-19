@@ -83,4 +83,33 @@ console.table(people);
 const driversGendersArr = people
   .filter((pObj) => pObj.hasCar === true)
   .map((pObj) => pObj.sex);
-console.log('driversGendersArr ===', driversGendersArr);
+// console.log('driversGendersArr ===', driversGendersArr);
+
+// Pagal people masyvą, naudojant Array.prototype.map,
+// suformuokite masyva pakeičiant savybę 'income' į 'salary'
+// pirma sukuriam nauja savybe i objekta 'salary' istrinti income
+
+function changeIncomeToSalary() {
+  // sukti cikla
+  const salaryArr = people.map((pObj) => {
+    // A. ciklo metu grazinti nauja norima objekta
+    const naujasObj = {
+      name: pObj.name,
+      surname: pObj.surname,
+      sex: pObj.sex,
+      age: pObj.age,
+      salary: pObj.income,
+      married: pObj.married,
+      hasCar: pObj.hasCar,
+    };
+    return naujasObj;
+  });
+  console.table(salaryArr);
+  return salaryArr;
+  // B. ciklo metu nusikopijuoti pObj
+  // ir atlikti kopijai pakeitimus
+  // grazinti kopija
+
+  // grazinti pakeista masyva
+}
+changeIncomeToSalary();
