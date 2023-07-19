@@ -1,4 +1,4 @@
-const students = [
+export const students = [
   {
     name: 'Panatėja',
     surname: 'Sulindytė',
@@ -198,4 +198,4 @@ const students = [
     ],
   },
 ];
-// console.table(students);
+console.table(students);

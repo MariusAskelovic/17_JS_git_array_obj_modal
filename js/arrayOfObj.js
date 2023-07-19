@@ -1,5 +1,6 @@
 import { printMen, printDriverGender } from './modules/forEachFn.js';
 import { youngWomen } from './modules/filterFn.js';
+import { students } from './modules/studentsArr.js';
 console.log('arrayOfObj.js file was loaded');
 
 const people = [
@@ -72,7 +73,7 @@ const people = [
   hasCar: false,
 },
 */
-console.table(people);
+// console.table(people);
 const skArr = [1, 4, 5];
 
 // printMen(people);
@@ -130,7 +131,7 @@ function changeIncomeToSalary() {
     };
     return naujasObj;
   });
-  console.table(salarayArr);
+  // console.table(salarayArr);
   // b. ciklo metu nusikopijuoti pObj
   // atlikti copijai pakeitimus
   // grazinti kopija
@@ -139,5 +140,5 @@ function changeIncomeToSalary() {
   return salarayArr;
 }
 const graza1 = changeIncomeToSalary();
-console.log('graza1 ===', graza1);
-console.table(people);
+// console.log('graza1 ===', graza1);
+// console.table(people);
