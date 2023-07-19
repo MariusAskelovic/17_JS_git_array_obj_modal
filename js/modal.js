@@ -4,6 +4,7 @@ console.log('modal.js file was loaded');
 // taikomes
 const els = {
   showBnt: document.getElementById('show'),
+  showErrorBtn: document.getElementById('showError'),
   cancelBnt: document.getElementById('cancel'),
   modalEl: document.getElementById('modal'),
   backdropEl: document.getElementById('backdrop'),
@@ -39,5 +40,6 @@ function displayInModal(title, subtitle) {
 // displayInModal('Svarbu', 'An apple a day you die anyway');
 // displayInModal('Klaida', 'visi laukai privalomi');
 
-// <button id="showError">Pranesti apie klaida</button> mygtuko paspaudimu
-// parodyti modal apie klaida, 'Klaida', 'visi laukai privalomi'
+els.showErrorBtn.addEventListener('click', () => {
+  displayInModal('Klaida', 'visi laukai privalomi');
+});
