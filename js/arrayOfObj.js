@@ -74,15 +74,14 @@ console.table(people);
 // printMen(people);
 
 // 2. Naudojant Array.prototype.filter grazinti visas moteris jaunesnes nei 35 metai.
-function youngWomen(arr) {
-  //   const atrinktiObj = people
-  //     .filter((personObj) => personObj.sex === 'female')
-  //     .filter((personObj) => personObj.age < 35);
-  const atrinktiObj = arr.filter(
-    (personObj) => personObj.sex === 'female' && personObj.age < 35
-  );
-  console.table(atrinktiObj);
+function youngWomen(mainArr) {
+  const atrinktiObj = [];
+  mainArr.forEach((personObj) => {
+    if (personObj.sex === 'female' && personObj.age < 35) {
+      atrinktiObj.push(personObj);
+    }
+  });
   return atrinktiObj;
 }
 const moterys = youngWomen(people);
-console.log('moterys ===', moterys.length);
+console.log('moterys ===', moterys);
