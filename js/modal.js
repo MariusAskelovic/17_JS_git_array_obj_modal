@@ -12,6 +12,8 @@ const els = {
 // event listeners
 els.showBtn.addEventListener('click', showModal);
 els.cancelBtn.addEventListener('click', hideModal);
+els.backdropEl.addEventListener('click', hideModal);
+
 // functions
 
 // showModal() - nuimti d-none nuo modalo
@@ -25,3 +27,11 @@ function hideModal() {
   els.modalEl.classList.add('d-none');
   els.backdropEl.classList.add('d-none');
 }
+
+function displayInModal(title, subtitle) {
+  els.modalEl.querySelector('h2').textContent = title;
+  els.modalEl.querySelector('p').textContent = subtitle;
+  showModal();
+}
+
+displayInModal('Svarbu', 'An apple a day you die anyway');
