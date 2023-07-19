@@ -375,4 +375,9 @@ function facultyList(arrName) {
   return newArr;
 }
 let checkFacultyList = facultyList(students);
-console.log('checkFacultyList ===', checkFacultyList);
+// console.log('checkFacultyList ===', checkFacultyList);
+
+const informatikaiArr = students.filter(
+  (oneObj) => oneObj.faculty === 'Informatikos fakultetas'
+);
+console.table(informatikaiArr);
