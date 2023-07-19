@@ -1,4 +1,4 @@
-'use strict';
+import { printMen } from './modules/forEachFn.js';
 console.log('arrayOfObj.js file was loaded');
 
 const people = [
@@ -71,13 +71,4 @@ const people = [
 
 console.table(people);
 
-function printMen(arr) {
-  // 1. Naudojant Array.prototype.forEach atspausdinti visus vyrus.
-  arr.forEach((personObj) => {
-    //   console.log(personObj.sex);
-    if (personObj.sex === 'male') {
-      console.log(personObj);
-    }
-  });
-}
 printMen(people);
