@@ -412,10 +412,23 @@ function avgMarksFilteredByFaculty(arrName, facultyName) {
   });
   console.log('newArrAvgMarks ===', newArrAvgMarks);
 }
-
 // 7. Informatikos fakulteto studentų vidurkius
 avgMarksFilteredByFaculty(students, 'Informatikos fakultetas');
 // 8. Chemijos fakulteto studentų vidurkius
 avgMarksFilteredByFaculty(students, 'Chemijos fakultetas');
 // 9. Elektros ir elektronikos fakulteto studentų vidurkius
 avgMarksFilteredByFaculty(students, 'Elektros ir elektronikos fakultetas');
+
+// FUNKCIJA 10-13 uzduotims
+function filterStudentsByCourse(arrName, courseNo) {
+  const newArr = arrName.filter((oneStudent) => oneStudent.course === courseNo);
+  return newArr;
+}
+// 10. tik pirmo kurso studentus
+console.table(filterStudentsByCourse(students, 1));
+// 11. tik antro kurso studentus
+console.table(filterStudentsByCourse(students, 2));
+// 12. tik trečio kurso studentus
+console.table(filterStudentsByCourse(students, 3));
+// 13. tik ketvirto kurso studentus
+console.table(filterStudentsByCourse(students, 4));
