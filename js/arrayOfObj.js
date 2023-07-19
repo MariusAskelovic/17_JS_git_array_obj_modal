@@ -61,47 +61,83 @@ const people = [
   },
 ];
 
-// 0
-// name: 'Jonas',
-// surname: 'Jonaitis',
-// sex: 'male',
-// age: 26,
-// income: 1200,
-// married: false,
-// hasCar: false,
-
+/* 
+{
+  name: 'Jonas',
+  surname: 'Jonaitis',
+  sex: 'male',
+  age: 26,
+  income: 1200,
+  married: false,
+  hasCar: false,
+},
+*/
 console.table(people);
+const skArr = [1, 4, 5];
 
 // printMen(people);
 
 // const moterys = youngWomen(people);
-// console.log('moterys ===', moterys.length);
+
 // printDriverGender(people);
 
-// 5.1 Naudojant Array.prototype.map grazinti naujame masyve visų vairuojančių žmonių lytį.
+// // 5.1 Naudojant Array.prototype.map
+// grazinti naujame masyve visų vairuojančių žmonių lytį.
 
 const driversGendersArr = people
-  .filter((pObj) => pObj.hasCar === true)
+  .filter((x) => x.hasCar === true)
   .map((pObj) => pObj.sex);
+
 // console.log('driversGendersArr ===', driversGendersArr);
 
-// Pagal people masyvą, naudojant Array.prototype.map,
-// suformuokite masyva pakeičiant savybę 'income' į 'salary'
-// pirma sukuriam nauja savybe i objekta 'salary' istrinti income
-
+/* 8. Pagal people masyvą, naudojant Array.prototype.map, suformuokite masyva pakeičiant savybę 'income' į 'salary'
+   pirma sukuriam nauja savybe i objekta 'salary'
+   istrinti income */
+/* 
+org
+{
+  name: 'Jonas',
+  surname: 'Jonaitis',
+  sex: 'male',
+  age: 26,
+  income: 1200,
+  married: false,
+  hasCar: false,
+},
+rez
+{
+  name: 'Jonas',
+  surname: 'Jonaitis',
+  sex: 'male',
+  age: 26,
+  married: false,
+  hasCar: false,
+  salary: 1200,
+},
+*/
 function changeIncomeToSalary() {
   // sukti cikla
-  const salaryArr = people.map((pObj) => {
-    const pObjCopy = { ...pObj }; // pasidarom masyvo kopija, nes map pakeicia originala
-    pObjCopy.salary = pObj.income;
-    delete pObjCopy.income;
-    return pObjCopy;
+  const salarayArr = people.map((pObj) => {
+    // a. ciklo metu grazinti nauja norima objekta
+    const naujasObj = {
+      name: pObj.name,
+      surname: pObj.surname,
+      sex: pObj.sex,
+      age: pObj.age,
+      married: pObj.married,
+      hasCar: pObj.hasCar,
+      salary: pObj.income,
+    };
+    return naujasObj;
   });
-  // B. ciklo metu nusikopijuoti pObj
-  // ir atlikti kopijai pakeitimus
+  console.table(salarayArr);
+  // b. ciklo metu nusikopijuoti pObj
+  // atlikti copijai pakeitimus
   // grazinti kopija
-  console.table(salaryArr);
+
   // grazinti pakeista masyva
-  return salaryArr;
+  return salarayArr;
 }
-changeIncomeToSalary();
+const graza1 = changeIncomeToSalary();
+console.log('graza1 ===', graza1);
+console.table(people);

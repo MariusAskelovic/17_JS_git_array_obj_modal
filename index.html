@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
     <title>Git Array</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style.css">
     <!-- <script type="module" src="js/arrayOfObj.js"></script> -->
     <script src="js/modal.js" defer></script>
 </head>
@@ -15,6 +14,11 @@
     <h1>Git Array of objects</h1>
     <button id="show">show modal</button>
     <button id="showError">Pranesti apie klaida</button>
+    <fieldset>
+        <legend>Modalo title</legend>
+        <input type="text" placeholder="nauja modalo antraste">
+        <button id="fieldsetBtn">Pakeisti ir parodyti</button>
+    </fieldset>
 
     <!-- sukurti modala -->
     <div id="backdrop" class="backdrop d-none"></div>
@@ -23,11 +27,12 @@
         <p>info</p>
         <div class="controll">
             <button id="yes">confirm</button>
-            <button id="cancel">cancel</button>
+            <button id="cancel">X</button>
         </div>
     </div>
 
-    <h2>Title below modal</h2>
+    <h2>I im title below</h2>
+
 </body>
 
 </html>
