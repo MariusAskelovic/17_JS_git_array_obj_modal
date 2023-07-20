@@ -446,7 +446,7 @@ function bendrasStudentoPazymiuVidurkis() {
   newArr.forEach((vienasStudentas) => {
     let studentoPazymiuVidurkis = 0;
     let kiekDalyku = 0;
-    vienasStudentas.modules.map((dalykas) => {
+    vienasStudentas.modules.forEach((dalykas) => {
       let dalykoPazymiuVidurkis = 0;
       dalykoPazymiuVidurkis =
         dalykas.marks.reduce((total, num) => total + num, 0) /
